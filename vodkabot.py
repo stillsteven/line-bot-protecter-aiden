@@ -238,8 +238,8 @@ def SEND_MESSAGE(op):
                     sendMessage(msg.to, "Current time is" + datetime.datetime.today().strftime('%Y年%m月%d日 %H:%M:%S') + "is")
                 if msg.text == "gift":
                     sendMessage(msg.to, text="gift sent", contentMetadata=None, contentType=9)
-                if msg.text == "set":
-                    sendMessage(msg.to, "開始記錄已讀不回 ♪\n「tes」小心喔 已讀不回者 ♪")
+                if msg.text == "妮琪⚫皮爾斯已被退出群組":
+                    sendMessage(msg.to, "invite:")
                     try:
                         del wait['readPoint'][msg.to]
                         del wait['readMember'][msg.to]
