@@ -107,7 +107,6 @@ def RECEIVE_MESSAGE(op):
     except KeyboardInterrupt:
 	       sys.exit(0)
     except Exception as error:
-        print error
         print ("\n\nRECEIVE_MESSAGE\n\n")
         return
 
@@ -249,7 +248,6 @@ def SEND_MESSAGE(op):
             pass
 
     except Exception as e:
-        print e
         print ("\n\nSEND_MESSAGE\n\n")
         return
 
