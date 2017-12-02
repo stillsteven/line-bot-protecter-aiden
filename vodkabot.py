@@ -14,6 +14,7 @@ client._qrLogin("line://au/q/")
 profile, setting, tracer = client.getProfile(), client.getSettings(), LineTracer(client)
 offbot, messageReq, wordsArray, waitingAnswer = [], {}, {}, {}
 
+print client._loginresult()
 
 wait = {
     'readPoint':{},
@@ -40,6 +41,7 @@ def NOTIFIED_ADD_CONTACT(op):
     try:
         sendMessage(op.param1, client.getContact(op.param1).displayName + "Thanks for add")
     except Exception as e:
+	print e
         print ("\n\nNOTIFIED_ADD_CONTACT\n\n")
         return
 
@@ -50,6 +52,7 @@ def NOTIFIED_ACCEPT_GROUP_INVITATION(op):
     try:
         sendMessage(op.param1, client.getContact(op.param2).displayName + "c " + group.name)
     except Exception as e:
+	print e
         print ("\n\nNOTIFIED_ACCEPT_GROUP_INVITATION\n\n")
         return
 
@@ -59,6 +62,7 @@ def NOTIFIED_KICKOUT_FROM_GROUP(op):
     try:
         sendMessage(op.param1, client.getContact(op.param3).displayName + "已被退出群組")
     except Exception as e:
+	print e
         print ("\n\nNOTIFIED_KICKOUT_FROM_GROUP\n\n")
         return
 
@@ -68,6 +72,7 @@ def NOTIFIED_LEAVE_GROUP(op):
     try:
         sendMessage(op.param1, client.getContact(op.param2).displayName + "已退出群組")
     except Exception as e:
+	print e
         print ("\n\nNOTIFIED_LEAVE_GROUP\n\n")
         return
 
@@ -107,6 +112,7 @@ def RECEIVE_MESSAGE(op):
     except KeyboardInterrupt:
 	       sys.exit(0)
     except Exception as error:
+	print error
         print ("\n\nRECEIVE_MESSAGE\n\n")
         return
 
@@ -248,6 +254,7 @@ def SEND_MESSAGE(op):
             pass
 
     except Exception as e:
+	print e
         print ("\n\nSEND_MESSAGE\n\n")
         return
 
