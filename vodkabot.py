@@ -40,7 +40,6 @@ def NOTIFIED_ADD_CONTACT(op):
     try:
         sendMessage(op.param1, client.getContact(op.param1).displayName + "Thanks for add")
     except Exception as e:
-        print e
         print ("\n\nNOTIFIED_ADD_CONTACT\n\n")
         return
 
@@ -51,7 +50,6 @@ def NOTIFIED_ACCEPT_GROUP_INVITATION(op):
     try:
         sendMessage(op.param1, client.getContact(op.param2).displayName + "c " + group.name)
     except Exception as e:
-        print e
         print ("\n\nNOTIFIED_ACCEPT_GROUP_INVITATION\n\n")
         return
 
